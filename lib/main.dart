@@ -1,4 +1,4 @@
-import 'package:animate_do_app/presentation/screens/screen1.dart';
+import 'package:animate_do_app/presentation/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.dark),
-      home: const Screen1()
+      home: const MainScreen()
     );
   }
 }

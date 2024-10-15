@@ -1,17 +1,18 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:animate_do_app/presentation/screens/notifications_screen.dart';
 import 'package:animate_do_app/presentation/screens/twitter_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Screen1 extends StatelessWidget {
-  const Screen1({
+class MainScreen extends StatelessWidget {
+  const MainScreen({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Text('Animate_do'),
@@ -32,7 +33,7 @@ class Screen1 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, 
                   CupertinoPageRoute(
-                    builder: (context) => const Screen1()
+                    builder: (context) => const MainScreen()
                   )
                 );
               }, 
@@ -43,7 +44,11 @@ class Screen1 extends StatelessWidget {
       ),
       floatingActionButton: ElasticInRight(
         child: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () => Navigator.push(context, 
+                MaterialPageRoute(
+                  builder: (context) => const NotificationsScreen()
+                )
+              ),
           backgroundColor: Colors.blue,
           child: const FaIcon( FontAwesomeIcons.play, color: Colors.white ),
         ),
@@ -81,4 +86,3 @@ class Screen1 extends StatelessWidget {
     );
   }
 }
-
