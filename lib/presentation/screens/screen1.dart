@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:animate_do_app/presentation/screens/twitter_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,7 +17,13 @@ class Screen1 extends StatelessWidget {
         title: const Text('Animate_do'),
         actions: [
           IconButton(
-            onPressed: () {}, 
+            onPressed: () {
+              Navigator.push(context, 
+                MaterialPageRoute(
+                  builder: (context) => const TwitterScreen()
+                )
+              );              
+            }, 
             icon: const FaIcon( FontAwesomeIcons.twitter, color: Colors.white )
           ),
           SlideInLeft(
@@ -26,7 +33,8 @@ class Screen1 extends StatelessWidget {
                 Navigator.push(context, 
                   CupertinoPageRoute(
                     builder: (context) => const Screen1()
-                  ));
+                  )
+                );
               }, 
               icon: const Icon( Icons.navigate_next, color: Colors.white )
             ),
